@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="protractorApp">
+<head lang="en">
+	<title>Protractor App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+
+
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+
+
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="bower_components/angular-mocks/angular-mocks.js"></script>
+
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="js/interceptors/Interceptor.js"></script>
+	<script type="text/javascript" src="js/service/AuthenticationService.js"></script>
+	<script type="text/javascript" src="js/service/PostsService.js"></script>
+	<script type="text/javascript" src="js/controllers/HomeController.js"></script>
+	<script type="text/javascript" src="js/controllers/AddPostController.js"></script>
+	<script type="text/javascript" src="js/controllers/LoginController.js"></script>
+
+	<link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body>
+<div id="container">
+	<div id="view" ui-view></div>
+</div>
+</body>
+</html>
