@@ -9,7 +9,7 @@ app.factory('PostsService', ['$q', '$http', function ($q, $http) {
 		addPost: function (post) {
 			var deferred = $q.defer();
 
-			$http.post(BASE_URL + '/publishPost', post, {'Content-Type': 'application/json'})
+			$http.post(BASE_URL + '/publishPost', post)
 				.success(function (data) {
 					var result = {};
 					if (data) {
