@@ -5,8 +5,8 @@ app.controller('AddPostController', ['$scope', '$state', 'PostsService', functio
 	$scope.savePost = function() {
 		console.log(angular.toJson($scope.post));
 		PostsService.addPost($scope.post).then(
-			function(id) {
-				console.log('success');
+			function(data) {
+				console.log(data);
 				//$state.go('home');
 			},
 			function(error) {

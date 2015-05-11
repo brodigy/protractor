@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 		open: {
 			devserver: {
 				path: 'http://localhost:8888',
-				app: 'chrome'
+				app: 'Google Chrome'
 			}
 		},
 		protractor: {
