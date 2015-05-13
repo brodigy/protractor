@@ -6,12 +6,11 @@ app.controller('AddPostController', ['$scope', '$state', 'PostsService', functio
 		console.log(angular.toJson($scope.post));
 		PostsService.addPost($scope.post).then(
 			function(data) {
-				console.log(data);
-				//$state.go('home');
+				$state.go('home');
 			},
 			function(error) {
 				console.log('error');
-				//$state.go('login');
+				$state.go('login');
 			}
 		);
 	};
