@@ -10,7 +10,6 @@ app.factory('Interceptor', ['$injector', '$q', function ($injector, $q) {
 		},
 		'response': function (response) {
 			var auth = response.data.token;
-			//console.log('resp: ', response);
 
 			if (auth != null) {
 				sessionStorage.setItem('auth', auth);
