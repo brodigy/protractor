@@ -15,8 +15,12 @@
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
-		<div class="help-block error" ng-show="invalidLogin">
-			<p> Invalid Credentials</p>
+		<br />
+
+		<div class="alert alert-danger" role="alert" ng-show="invalidLogin">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			<span class="sr-only">Error:</span>
+			Invalid Credentials
 		</div>
 
 	</form>
