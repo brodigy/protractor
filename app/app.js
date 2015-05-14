@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('protractorApp', ['ui.router']);
+var app = angular.module('protractorApp', ['ui.router', 'angular-growl', 'ngSanitize']);
 
 app.config(['$stateProvider', '$urlRouterProvider',
 	function ($stateProvider, $urlRouterProvider) {
@@ -24,3 +24,10 @@ app.config(['$stateProvider', '$urlRouterProvider',
 				controller: "AddPostController"
 			})
 	}]);
+
+
+app.config(['growlProvider', function (growlProvider) {
+	growlProvider.globalTimeToLive(5000);
+	growlProvider.onlyUniqueMessages(false);
+	growlProvider.globalEnableHtml(true);
+}]);

@@ -1,5 +1,5 @@
-app.controller('LoginController', ['$scope', 'AuthenticationService', '$state',
-	function ($scope, AuthenticationService, $state) {
+app.controller('LoginController', ['$scope', 'AuthenticationService', '$state', 'growl',
+	function ($scope, AuthenticationService, $state, growl) {
 
 		$scope.password = '';
 		$scope.username = '';
@@ -10,8 +10,13 @@ app.controller('LoginController', ['$scope', 'AuthenticationService', '$state',
 					$state.go('home');
 				})
 				.error(function(data) {
-					console.log('error', data);
+					$scope.invokeErrorMessage();
+					console.log('Login Failed');
 				});
+		}
 
+
+		$scope.invokeErrorMessage = function() {
+			growl.addErrorMessage('Login failed');
 		}
 	}]);
