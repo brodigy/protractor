@@ -1,5 +1,5 @@
-app.controller('HomeController', ['$scope', 'PostsService',
-	function ($scope, PostsService) {
+app.controller('HomeController', ['$scope', 'PostsService', 'growl',
+	function ($scope, PostsService, growl) {
 
 		$scope.posts = [];
 
@@ -8,7 +8,8 @@ app.controller('HomeController', ['$scope', 'PostsService',
 				$scope.posts = angular.copy(data);
 			})
 			.error(function (data) {
-				console.log('error', data);
+				growl.addErrorMessage('We could not find any posts');
+				console.log('error');
 			});
 
-	}])
+	}]);

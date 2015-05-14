@@ -13,15 +13,26 @@ app.config(['$stateProvider', '$urlRouterProvider',
 				templateUrl: 'views/login.html',
 				controller: 'LoginController'
 			})
+			.state('auth', {
+				abstract: true,
+				controller: 'AuthController',
+				templateUrl: 'views/auth.html'
+			})
 			.state('home', {
 				url: '/home',
 				templateUrl: 'views/home.html',
-				controller: 'HomeController'
+				controller: 'HomeController',
+				parent: 'auth'
 			})
 			.state('add', {
 				url: '/add',
 				templateUrl: 'views/add.html',
-				controller: "AddPostController"
+				controller: "AddPostController",
+				parent: 'auth'
+			})
+			.state('error', {
+				url: '/error',
+				templateUrl: 'views/error.html',
 			})
 	}]);
 

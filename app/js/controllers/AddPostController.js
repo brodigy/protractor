@@ -1,4 +1,4 @@
-app.controller('AddPostController', ['$scope', '$state', 'PostsService', function($scope, $state, PostsService) {
+app.controller('AddPostController', ['$scope', '$state', 'PostsService', 'growl', function($scope, $state, PostsService, growl) {
 
 	$scope.post = {title : '', message : '', author : ''};
 
@@ -9,8 +9,7 @@ app.controller('AddPostController', ['$scope', '$state', 'PostsService', functio
 				$state.go('home');
 			},
 			function(error) {
-				console.log('error');
-				$state.go('login');
+				growl.addErrorMessage('Something went wrong when saving your post');
 			}
 		);
 	};

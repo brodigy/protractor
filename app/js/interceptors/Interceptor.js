@@ -17,6 +17,13 @@ app.factory('Interceptor', ['$injector', '$q', function ($injector, $q) {
 
 			return response || $q.when(response);
 
+		},
+		'responseError': function (rejection) {
+			if (rejection.status === 401) {
+				sessionStorage.clear();
+				$injector.get('$state').go('login');
+			}
+			return $q.reject(rejection);
 		}
 
 	};

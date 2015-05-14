@@ -8,10 +8,11 @@ app.controller('LoginController', ['$scope', 'AuthenticationService', '$state', 
 		$scope.login = function() {
 			AuthenticationService.login({username: $scope.username, password: $scope.password})
 				.success(function (data) {
+					growl.addSuccessMessage('Login successful');
 					$state.go('home');
 				})
 				.error(function(data) {
-					$scope.invokeErrorMessage();
+					growl.addErrorMessage('Login failed');
 					console.log('Login Failed');
 					$scope.invalidLogin = true;
 				});
