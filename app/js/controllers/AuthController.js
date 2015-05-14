@@ -5,4 +5,9 @@ app.controller('AuthController', ['$scope', '$state',
 			$state.transitionTo('error');
 		}
 
+		$scope.logout = function () {
+			sessionStorage.clear();
+			$state.transitionTo('login');
+		}
+
 	}]);
