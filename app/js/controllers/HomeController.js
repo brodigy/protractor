@@ -9,7 +9,6 @@ app.controller('HomeController', ['$scope', 'PostsService', 'growl',
 			})
 			.error(function (data) {
 				growl.addErrorMessage('We could not find any posts');
-				console.log('error');
 			});
 
 	}]);

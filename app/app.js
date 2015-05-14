@@ -32,7 +32,7 @@ app.config(['$stateProvider', '$urlRouterProvider',
 			})
 			.state('error', {
 				url: '/error',
-				templateUrl: 'views/error.html',
+				templateUrl: 'views/error.html'
 			})
 	}]);
 

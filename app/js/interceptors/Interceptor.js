@@ -21,7 +21,7 @@ app.factory('Interceptor', ['$injector', '$q', function ($injector, $q) {
 		'responseError': function (rejection) {
 			if (rejection.status === 401) {
 				sessionStorage.clear();
-				$injector.get('$state').go('login');
+				$injector.get('$state').go('error');
 			}
 			return $q.reject(rejection);
 		}
