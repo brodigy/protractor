@@ -3,6 +3,7 @@ app.controller('LoginController', ['$scope', 'AuthenticationService', '$state', 
 
 		$scope.password = '';
 		$scope.username = '';
+		$scope.invalidLogin = false;
 
 		$scope.login = function() {
 			AuthenticationService.login({username: $scope.username, password: $scope.password})
@@ -12,6 +13,7 @@ app.controller('LoginController', ['$scope', 'AuthenticationService', '$state', 
 				.error(function(data) {
 					$scope.invokeErrorMessage();
 					console.log('Login Failed');
+					$scope.invalidLogin = true;
 				});
 		}
 

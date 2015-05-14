@@ -52,3 +52,7 @@ body {
 	color: #337ab7;
 	font-weight: bold;
 }
+
+.error {
+	color: #a94442;
+}
