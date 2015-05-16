@@ -2,24 +2,28 @@ app.controller('LoginController', ['$scope', 'AuthenticationService', '$state', 
 	function ($scope, AuthenticationService, $state, growl) {
 
 		$scope.password = '';
-		$scope.username = '';
-		$scope.invalidLogin = false;
+		$scope.email = '';
 
-		$scope.login = function() {
-			AuthenticationService.login({username: $scope.username, password: $scope.password})
+		$scope.login = function () {
+			AuthenticationService.login({email: $scope.email, password: $scope.password})
 				.success(function (data) {
 					growl.addSuccessMessage('Login successful');
 					$state.go('home');
 				})
-				.error(function(data) {
+				.error(function (data) {
 					growl.addErrorMessage('Login failed');
 					console.log('Login Failed');
-					$scope.invalidLogin = true;
 				});
-		}
+		};
 
 
-		$scope.invokeErrorMessage = function() {
-			growl.addErrorMessage('Login failed');
-		}
+		$scope.isFormInvalid = function () {
+			return ($scope.loginForm.email.$dirty && !$scope.loginForm.email.$valid)
+				|| ($scope.loginForm.password.$dirty && !$scope.loginForm.password.$valid);
+		};
+
+		$scope.isReadyToSave = function () {
+			return $scope.loginForm.$valid;
+		};
+
 	}]);

@@ -4,7 +4,7 @@ app.factory('AuthenticationService', ['$q', '$http', function($q, $http) {
 		login : function(credentials) {
 			return $http.get('http://localhost:9090/login', {
 					params: {
-						username: credentials.username,
+						email: credentials.email,
 						password: credentials.password
 					}
 			});

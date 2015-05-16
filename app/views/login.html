@@ -2,25 +2,36 @@
 
 	<div growl></div>
 
-	<form class="form-signin" name="loginForm" ng-submit="login()">
+	<form class="form-signin" name="loginForm" id="loginForm" ng-submit="login()">
 		<h2 class="form-signin-heading">Protractor Demo App</h2>
 		<br/>
 		<br/>
 
-		<label for="username" class="sr-only">Username</label>
-		<input type="text" id="username" class="form-control" placeholder="Username" ng-model="username" required autofocus>
+		<label for="email" class="sr-only">Username</label>
+		<input type="text" id="email" class="form-control" placeholder="Email" ng-model="email" name="email" required >
 
 		<label for="password" class="sr-only">Password</label>
-		<input type="password" id="password" class="form-control" placeholder="Password" ng-model="password" required>
+		<input type="password" id="password" name="password", class="form-control" placeholder="Password" ng-model="password" required>
 
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="!isReadyToSave()">
+			Sign in
+		</button>
 
 		<br />
 
-		<div class="alert alert-danger" role="alert" ng-show="invalidLogin">
-			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-			<span class="sr-only">Error:</span>
-			Invalid Credentials
+
+		<div id="validation-messages" ng-show="isFormInvalid()" class="alert alert-danger" role="alert">
+			<p class="error" ng-show="loginForm.email.$dirty && loginForm.email.$error.required">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				<span class="sr-only">Error:</span>
+				Email address is required
+			</p>
+			<p class="error" ng-show="loginForm.password.$dirty && loginForm.password.$error.required">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				<span class="sr-only">Error:</span>
+				Password is required
+			</p>
+
 		</div>
 
 	</form>
