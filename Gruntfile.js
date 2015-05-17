@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 			},
 			testserver: {
 				options: {
-					port: 9999
+					port: 8080
 				}
 			}
 
@@ -59,10 +59,10 @@ module.exports = function (grunt) {
 		},
 		localstack: {
 			options: {
-				key: 'fzW7W48h8pf5V3gP14or',
+				key: 'F55Fo1Np5QvmpANB1XuS',
 				hosts: [{
 					name: 'localhost',
-					port: '9999',
+					port: '8080',
 					sslFlag: 0
 				}]
 			}
@@ -75,10 +75,9 @@ module.exports = function (grunt) {
 	grunt.registerTask('install', ['shell:protractor_install', 'shell:grunt_protractor_install']);
 
 
-
 	//tests
-	grunt.registerTask('protractor', ['install', 'connect:testserver', 'protractor:localRun']);
-	grunt.registerTask('protractor:browser_stack', ['localstack', 'install', 'connect:testserver', 'protractor:browserStack', 'localstack:stop']);
+	grunt.registerTask('test:e2e', ['install', 'connect:testserver', 'protractor:localRun']);
+	grunt.registerTask('test:e2e:browser_stack', ['localstack', 'install', 'connect:testserver', 'protractor:browserStack', 'localstack:stop']);
 
 
 

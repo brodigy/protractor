@@ -1,6 +1,6 @@
 'use strict';
 
-describe('login page', function () {
+xdescribe('add post page', function () {
 	var LoginPage = require('./pages/login.po.js');
 	var AddPostPage = require('./pages/addPost.po.js');
 	var HomePage = require('./pages/home.po.js');

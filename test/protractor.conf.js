@@ -10,7 +10,7 @@ exports.config = {
 		'browserName': 'chrome'
 	},
 
-	baseUrl: 'http://localhost:9999/',
+	baseUrl: 'http://localhost:8080/',
 
 	onPrepare: function () {
 		browser.driver.manage().window().setSize(1920, 1080);

@@ -7,8 +7,8 @@ exports.config = {
 	seleniumAddress: 'http://hub.browserstack.com/wd/hub',
 
 	capabilities: {
-		'browserstack.user': 'alexandru.petre@endava.com',
-		'browserstack.key': 'fzW7W48h8pf5V3gP14or',
+		'browserstack.user': 'petrealexandru88@gmail.com',
+		'browserstack.key': 'F55Fo1Np5QvmpANB1XuS',
 		'browserstack.debug': 'true',
 		'browserstack.local': 'true',
 		'browserstack.selenium_version': '2.45.0',
@@ -20,7 +20,7 @@ exports.config = {
 		'resolution': '1920x1080'
 	},
 
-	baseUrl: 'http://localhost:9999/',
+	baseUrl: 'http://localhost:8080',
 
 	onPrepare: function () {
 		browser.driver.manage().window().setSize(1920, 1080);
