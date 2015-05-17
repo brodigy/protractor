@@ -1,6 +1,6 @@
 'use strict';
 
-xdescribe('login page', function () {
+describe('login page', function () {
 
 	beforeEach(function () {
 		browser.get('');

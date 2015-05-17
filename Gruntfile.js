@@ -27,7 +27,9 @@ module.exports = function (grunt) {
 				}
 			},
 			testserver: {
-				port: 9999
+				options: {
+					port: 9999
+				}
 			}
 
 		},
