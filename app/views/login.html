@@ -19,16 +19,13 @@
 
 		<br />
 
-
 		<div id="validation-messages" ng-show="isFormInvalid()" class="alert alert-danger" role="alert">
 			<p class="error" ng-show="loginForm.email.$dirty && loginForm.email.$error.required">
 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-				<span class="sr-only">Error:</span>
 				Email address is required
 			</p>
 			<p class="error" ng-show="loginForm.password.$dirty && loginForm.password.$error.required">
 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-				<span class="sr-only">Error:</span>
 				Password is required
 			</p>
 

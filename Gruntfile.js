@@ -46,19 +46,38 @@ module.exports = function (grunt) {
 		},
 		protractor: {
 			options: {
-				keepAlive: false,
+				keepAlive: false
+			},
+			localRun: {
 				configFile: "./test/protractor.conf.js"
 			},
-			singlerun: {}
+			browserStack: {
+				configFile: "./test/protractor.browserstack.conf.js"
+			}
+		},
+		localstack: {
+			options: {
+				key: 'fzW7W48h8pf5V3gP14or',
+				hosts: [{
+					name: 'localhost',
+					port: '9999',
+					sslFlag: 0
+				}]
+			}
 		}
 	});
 
 	require('matchdep').filterAll(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
 
 	grunt.registerTask('default', ['copy:dev', 'open:devserver', 'connect:webserver']);
-
-	grunt.registerTask('protractor', ['install', 'connect:testserver', 'protractor:singlerun']);
 	grunt.registerTask('install', ['shell:protractor_install', 'shell:grunt_protractor_install']);
+
+
+
+	//tests
+	grunt.registerTask('protractor', ['install', 'connect:testserver', 'protractor:localRun']);
+	grunt.registerTask('protractor:browser_stack', ['localstack', 'install', 'connect:testserver', 'protractor:browserStack', 'localstack:stop']);
+
 
 
 };

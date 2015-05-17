@@ -7,13 +7,20 @@ exports.config = {
 	seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.45.0.jar',
 
 	capabilities: {
-		'browserName': 'phantomjs'
+		'browserName': 'chrome'
 	},
 
-	baseUrl: 'http://localhost:9999/',
+	baseUrl: 'http://localhost:8888/',
 
 	onPrepare: function () {
 		browser.driver.manage().window().setSize(1920, 1080);
+	},
+
+	params: {
+		login: {
+			email: 'alex@endava.com',
+			password: 'password'
+		}
 	},
 
 	jasmineNodeOpts: {
