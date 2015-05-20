@@ -1,6 +1,6 @@
 'use strict';
 
-describe('home page', function () {
+xdescribe('home page', function () {
 	var LoginPage = require('./pages/login.po.js');
 	var HomePage = require('./pages/home.po.js');
 	var mockInjector = require('./mocks/mockInjector.js');
@@ -16,7 +16,7 @@ describe('home page', function () {
 		params = browser.params.login;
 	});
 
-	it('should successfully add a new post', function () {
+	it('should successfully navigate to the home page', function () {
 		expect(browser.getLocationAbsUrl()).toMatch('/login');
 		loginPage.setCredentials(params.email, params.password);
 		expect(loginPage.submitLogin.isEnabled()).toBeTruthy();

@@ -20,7 +20,7 @@ exports.config = {
 		'resolution': '1920x1080'
 	},
 
-	baseUrl: 'http://localhost:8080',
+	baseUrl: 'http://localhost:8888',
 
 	onPrepare: function () {
 		browser.driver.manage().window().setSize(1920, 1080);

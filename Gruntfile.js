@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 			},
 			testserver: {
 				options: {
-					port: 8080
+					port: 8881
 				}
 			}
 
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 				key: 'F55Fo1Np5QvmpANB1XuS',
 				hosts: [{
 					name: 'localhost',
-					port: '8080',
+					port: '8888',
 					sslFlag: 0
 				}]
 			}
@@ -76,8 +76,9 @@ module.exports = function (grunt) {
 
 
 	//tests
-	grunt.registerTask('test:e2e', ['install', 'connect:testserver', 'protractor:localRun']);
-	grunt.registerTask('test:e2e:browser_stack', ['localstack', 'install', 'connect:testserver', 'protractor:browserStack', 'localstack:stop']);
+	grunt.registerTask('test:e2e', ['install', 'protractor:localRun']);
+	grunt.registerTask('test:e2e:mocked', ['install','connect:testserver', 'protractor:localRun']);
+	grunt.registerTask('test:e2e:browser_stack', ['localstack', 'install', 'protractor:browserStack', 'localstack:stop']);
 
 
 
