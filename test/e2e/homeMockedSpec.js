@@ -1,6 +1,6 @@
 'use strict';
 
-xdescribe('home page', function () {
+describe('home page', function () {
 	var LoginPage = require('./pages/login.po.js');
 	var HomePage = require('./pages/home.po.js');
 	var mockInjector = require('./mocks/mockInjector.js');

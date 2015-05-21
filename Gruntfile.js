@@ -53,6 +53,9 @@ module.exports = function (grunt) {
 			localRun: {
 				configFile: "./test/protractor.conf.js"
 			},
+			localRunMocked: {
+				configFile: "./test/protractor.mocked.conf.js"
+			},
 			browserStack: {
 				configFile: "./test/protractor.browserstack.conf.js"
 			}
@@ -77,7 +80,7 @@ module.exports = function (grunt) {
 
 	//tests
 	grunt.registerTask('test:e2e', ['install', 'protractor:localRun']);
-	grunt.registerTask('test:e2e:mocked', ['install','connect:testserver', 'protractor:localRun']);
+	grunt.registerTask('test:e2e:mocked', ['install','connect:testserver', 'protractor:localRunMocked']);
 	grunt.registerTask('test:e2e:browser_stack', ['localstack', 'install', 'protractor:browserStack', 'localstack:stop']);
 
 

@@ -15,22 +15,6 @@ var HomePage = function () {
 		});
 	};
 
-	this.getNrOfPosts = function (nr) {
-		this.listOfPosts.count().then(function (nrFound) {
-			nr = nrFound;
-		});
-	};
-
-	this.testAccount = function () {
-		var deferred = protractor.promise.defer();
-
-		element.all(by.repeater('post in posts')).count().then(function (nrFound) {
-			return deferred.fulfill(nrFound);
-		});
-
-		return deferred.promise;
-	};
-
 };
 
 module.exports = HomePage;
