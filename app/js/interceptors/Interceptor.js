@@ -3,7 +3,7 @@ app.factory('Interceptor', ['$injector', '$q', function ($injector, $q) {
 	return {
 		'request': function (config) {
 			var key = sessionStorage.getItem('auth');
-			if (key != null && config.url.indexOf('login') === -1) {
+			if (key != null && (config.url.indexOf('login') === -1 || config.url.indexOf('login') === -1) ){
 				config.headers.Auth = key;
 			}
 			return config || $q.when(config);

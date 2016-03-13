@@ -27,13 +27,48 @@
 	<div class="row col-md-12">
 		<h2> Examples with locators </h2>
 
-		<div class="row col-md-5">
-			<h3> Example 1 : ng-repeat</h3>
+		<div class="row col-md-12">
+			<h3> Example 1 : ng-bind and ng-model</h3>
+			<br/>
+			<span>{{val}}</span>
+			<br/>
+			<span ng-bind="val"></span>
+			<br/>
+			<input ng-model="val" type = 'text'/>
+		</div>
+
+		<div class="row col-md-12">
+			<h3> Example 2 : ng-repeat</h3>
 			<br/>
 			<div ng-repeat="pet in pets">
 				<span class="petName">{{pet.name}}</span> <span>{{pet.age}}</span>
 			</div>
 		</div>
+
+		<div class="row col-md-12">
+			<h3> Example 3 : filter() and each()</h3>
+			<br/>
+			<ul class="items">
+				<li>First</li>
+				<li>Second</li>
+				<li>Third</li>
+			</ul>
+
+		</div>
+
+
+		<div class="row col-md-12">
+			<h3> Example 4 : Using nested locators</h3>
+			<br/>
+			<div id="divId">
+				<div> Div 1</div>
+				<div> Div 2</div>
+				<div> Div 3</div>
+			</div>
+		</div>
+
+
+
 
 	</div>
 </div>
