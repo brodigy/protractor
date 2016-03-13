@@ -1,6 +1,6 @@
 'use strict';
 
-fdescribe('locators test', function () {
+describe('locators test', function () {
 
 
     beforeEach(function () {
