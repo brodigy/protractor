@@ -1,7 +1,8 @@
 exports.config = {
 
 	specs: [
-		'./e2e/*.js'
+		'./et/**/*.js',
+		'./it/**/*.js'
 	],
 
 	seleniumAddress: 'http://hub.browserstack.com/wd/hub',

@@ -1,7 +1,7 @@
 exports.config = {
 
 	specs: [
-		'./e2e/homeMockedSpec.js'
+		'./it/**/*ITSpec.js'
 	],
 
 	capabilities: {

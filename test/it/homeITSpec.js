@@ -1,8 +1,8 @@
 'use strict';
 
 describe('home page', function () {
-	var LoginPage = require('./pages/login.po.js');
-	var HomePage = require('./pages/home.po.js');
+	var LoginPage = require('./../pages/login.po.js');
+	var HomePage = require('./../pages/home.po.js');
 	var mockInjector = require('./mocks/mockInjector.js');
 	var loginPage, homePage, params;
 

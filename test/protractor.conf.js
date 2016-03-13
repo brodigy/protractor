@@ -1,10 +1,7 @@
 exports.config = {
 
 	specs: [
-		'./e2e/addPostSpec.js',
-		'./e2e/loginSpec.js',
-		'./e2e/loginWithPOSpec.js'
-
+		'./et/**/*ETSpec.js'
 	],
 
 	capabilities: {

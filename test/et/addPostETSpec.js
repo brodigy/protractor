@@ -1,9 +1,9 @@
 'use strict';
 
 describe('add post page', function () {
-	var LoginPage = require('./pages/login.po.js');
-	var AddPostPage = require('./pages/addPost.po.js');
-	var HomePage = require('./pages/home.po.js');
+	var LoginPage = require('./../pages/login.po.js');
+	var AddPostPage = require('./../pages/addPost.po.js');
+	var HomePage = require('./../pages/home.po.js');
 	var loginPage, addPostPage, homePage, params;
 
 	beforeEach(function () {

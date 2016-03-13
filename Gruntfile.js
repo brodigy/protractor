@@ -76,8 +76,8 @@ module.exports = function (grunt) {
 
 
 	//tests
-	grunt.registerTask('test:e2e', ['install', 'protractor:localRun']);
-	grunt.registerTask('test:e2e:mocked', ['install','connect:testserver', 'protractor:localRunMocked']);
+	grunt.registerTask('test:et', ['install', 'protractor:localRun']);
+	grunt.registerTask('test:it', ['install','connect:testserver', 'protractor:localRunMocked']);
 	grunt.registerTask('test:e2e:browser_stack', ['localstack', 'install', 'protractor:browserStack', 'localstack:stop']);
 
 

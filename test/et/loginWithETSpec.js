@@ -1,7 +1,7 @@
 'use strict';
 
 describe('login page', function () {
-	var LoginPage = require('./pages/login.po.js');
+	var LoginPage = require('./../pages/login.po.js');
 	var loginPage;
 	var params;
 
