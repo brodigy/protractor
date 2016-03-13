@@ -30,6 +30,12 @@ app.config(['$stateProvider', '$urlRouterProvider',
 				controller: "AddPostController",
 				parent: 'auth'
 			})
+            .state('timeout', {
+                url: '/timeout',
+                templateUrl: 'views/timeout.html',
+                controller: "TimeoutController",
+                parent: 'auth'
+            })
 			.state('locators', {
 				url: '/locators',
 				templateUrl: 'views/locators.html',
