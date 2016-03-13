@@ -53,6 +53,17 @@ body {
 	font-weight: bold;
 }
 
+.petName{
+	color: #337ab7;
+	font-weight: bold;
+}
+
 .error {
 	color: #a94442;
+}
+
+code {
+	display: block;
+	width: 600px;
+	margin: 2px 0;
 }

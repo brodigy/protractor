@@ -30,6 +30,12 @@ app.config(['$stateProvider', '$urlRouterProvider',
 				controller: "AddPostController",
 				parent: 'auth'
 			})
+			.state('locators', {
+				url: '/locators',
+				templateUrl: 'views/locators.html',
+				controller: "LocatorsController",
+				parent: 'auth'
+			})
 			.state('error', {
 				url: '/error',
 				templateUrl: 'views/error.html'
