@@ -8,9 +8,6 @@ module.exports = function (grunt) {
 			protractor_install: {
 				command: 'node ./node_modules/protractor/bin/webdriver-manager update'
 			},
-			grunt_protractor_install: {
-				command: 'node ./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update'
-			},
 			npm_install: {
 				command: 'npm install'
 			}
@@ -43,7 +40,7 @@ module.exports = function (grunt) {
 		open: {
 			devserver: {
 				path: 'http://localhost:8888',
-				app: 'chrome'
+				app: 'Google Chrome'
 			}
 		},
 		protractor: {
@@ -75,7 +72,7 @@ module.exports = function (grunt) {
 	require('matchdep').filterAll(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
 
 	grunt.registerTask('default', ['copy:dev', 'open:devserver', 'connect:webserver']);
-	grunt.registerTask('install', ['shell:protractor_install', 'shell:grunt_protractor_install']);
+	grunt.registerTask('install', ['shell:protractor_install', 'shell:protractor_install']);
 
 
 	//tests
