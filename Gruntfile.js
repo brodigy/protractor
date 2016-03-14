@@ -56,6 +56,10 @@ module.exports = function (grunt) {
 			browserStack: {
 				configFile: "./test/protractor.browserstack.conf.js"
 			}
+			,
+			parallel: {
+				configFile: "./test/protractor.parallel.js"
+			}
 		},
 		localstack: {
 			options: {
@@ -78,6 +82,7 @@ module.exports = function (grunt) {
 	//tests
 	grunt.registerTask('test:et', ['install', 'protractor:localRun']);
 	grunt.registerTask('test:it', ['install','connect:testserver', 'protractor:localRunMocked']);
+	grunt.registerTask('test:parallel', ['install', 'protractor:parallel']);
 	grunt.registerTask('test:e2e:browser_stack', ['localstack', 'install', 'protractor:browserStack', 'localstack:stop']);
 
 
