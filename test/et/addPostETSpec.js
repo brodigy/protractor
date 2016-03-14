@@ -14,11 +14,9 @@ describe('add post page', function () {
 
 		loginPage.get();
 		params = browser.params.login;
-		//postsService.clearPosts().then(function(data){
-		//	console.log('nr of posts: ', data);
-		//});
-
-        postsService.clearPosts();
+		postsService.clearPosts().then(function(data){
+			console.log('nr of posts: ', data);
+		});
 	});
 
 	it('should successfully add a new post', function () {
