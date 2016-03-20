@@ -26,7 +26,10 @@ app.factory('AuthenticationService', ['$q', '$http', function($q, $http) {
 					deferred.reject(angular.fromJson(data));
 				});
 			return deferred.promise;
-		}
+		},
+        getUsers: function () {
+            return $http.get(BASE_URL + '/users')
+        },
 	};
 
 }]);

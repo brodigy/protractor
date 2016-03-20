@@ -1,16 +1,16 @@
-app.controller('GridController', ['$scope', 'AuthenticationService', 'growl',
-    function ($scope, AuthenticationService, growl)  {
+app.controller('GridController', ['$scope', 'AuthenticationService', 'growl', '$state',
+    function ($scope, AuthenticationService, growl, $state) {
 
         $scope.user = {
-            username : '',
-            firstName : '',
-            lastName : '',
-            gender : 'Select Gender',
-            password : ''
+            username: '',
+            firstName: '',
+            lastName: '',
+            gender: 'Select Gender',
+            password: ''
         };
 
-        $scope.selectGender = function(val){
-            $scope.user.gender =  val;
+        $scope.selectGender = function (val) {
+            $scope.user.gender = val;
         };
 
         $scope.isFormInvalid = function () {
@@ -22,13 +22,13 @@ app.controller('GridController', ['$scope', 'AuthenticationService', 'growl',
             return $scope.userForm.$valid;
         };
 
-        $scope.saveUser = function(){
+        $scope.saveUser = function () {
             console.log(angular.toJson($scope.user));
             AuthenticationService.saveUser($scope.user).then(
-                function(data) {
-                    $state.go('grid');
+                function (data) {
+                    $state.go('grid', {}, {reload: true});
                 },
-                function(error) {
+                function (error) {
                     growl.addErrorMessage('Something went wrong when saving your user');
                 }
             );
@@ -38,84 +38,28 @@ app.controller('GridController', ['$scope', 'AuthenticationService', 'growl',
             paginationPageSizes: [5, 10, 25],
             paginationPageSize: 5,
             columnDefs: [
-                { name: 'name' },
-                { name: 'gender' },
-                { name: 'company' }
+                {name: 'username'},
+                {name: 'firstName'},
+                {name: 'lastName'},
+                {name: 'gender'},
+                {name: 'password'}
             ]
         };
 
-        $scope.theGrid.data = [
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            },
-            {
-                "gender": "Cox",
-                "name": "Carney",
-                "company": "male"
-            }
+        var init = function () {
+            AuthenticationService.getUsers().then(
+                function (data) {
 
-        ];
+                    if (data.data.length != 0) {
+                        $scope.theGrid.data = data.data;
+                    }
+
+                },
+                function (error) {
+                    growl.addErrorMessage('Something went wrong when getting users');
+                }
+            );
+        };
+        init();
 
     }]);
