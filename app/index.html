@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
 	<link rel="stylesheet" href="bower_components/angular-growl/build/angular-growl.min.css"/>
+	<link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
 
 
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
@@ -16,6 +17,7 @@
 	<script type="text/javascript" src="bower_components/angular-mocks/angular-mocks.js"></script>
 	<script type="text/javascript" src="bower_components/angular-growl/build/angular-growl.js"></script>
 	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-grid/ui-grid.js"></script>
 
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/interceptors/Interceptor.js"></script>
@@ -23,6 +25,7 @@
 	<script type="text/javascript" src="js/service/PostsService.js"></script>
 	<script type="text/javascript" src="js/controllers/HomeController.js"></script>
 	<script type="text/javascript" src="js/controllers/LocatorsController.js"></script>
+	<script type="text/javascript" src="js/controllers/GridController.js"></script>
 	<script type="text/javascript" src="js/controllers/TimeoutController.js"></script>
 	<script type="text/javascript" src="js/controllers/AddPostController.js"></script>
 	<script type="text/javascript" src="js/controllers/LoginController.js"></script>
@@ -33,6 +36,7 @@
 </head>
 <body>
 <div id="container">
+    <div class="row"></div>
 	<div id="view" ui-view></div>
 </div>
 </body>

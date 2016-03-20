@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('protractorApp', ['ui.router', 'angular-growl', 'ngSanitize']);
+var app = angular.module('protractorApp', ['ui.router', 'angular-growl', 'ngSanitize',  'ui.grid', 'ui.grid.pagination']);
 
 app.config(['$stateProvider', '$urlRouterProvider',
 	function ($stateProvider, $urlRouterProvider) {
@@ -36,6 +36,12 @@ app.config(['$stateProvider', '$urlRouterProvider',
                 controller: "TimeoutController",
                 parent: 'auth'
             })
+			.state('grid', {
+				url: '/grid',
+				templateUrl: 'views/grid.html',
+				controller: "GridController",
+				parent: 'auth'
+			})
 			.state('locators', {
 				url: '/locators',
 				templateUrl: 'views/locators.html',
